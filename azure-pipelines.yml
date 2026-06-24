@@ -6,6 +6,7 @@ pool:
 
 steps:
 
+# Install Terraform
 - script: |
     wget https://releases.hashicorp.com/terraform/1.12.2/terraform_1.12.2_linux_amd64.zip
     unzip terraform_1.12.2_linux_amd64.zip
@@ -13,14 +14,42 @@ steps:
     terraform version
   displayName: 'Install Terraform'
 
+# Terraform Init
 - task: AzureCLI@2
-  displayName: 'Terraform Init Validate Plan Apply'
+  displayName: 'Terraform Init'
   inputs:
     azureSubscription: 'azure-sp-conn'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
       terraform init -reconfigure
+
+# Terraform Validate
+- task: AzureCLI@2
+  displayName: 'Terraform Validate'
+  inputs:
+    azureSubscription: 'azure-sp-conn'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
       terraform validate
-      terraform plan
-      terraform apply -auto-approve
+
+# Terraform Plan
+- task: AzureCLI@2
+  displayName: 'Terraform Plan'
+  inputs:
+    azureSubscription: 'azure-sp-conn'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      terraform plan -var-file="terraform.tfvars"
+
+# Terraform Apply
+- task: AzureCLI@2
+  displayName: 'Terraform Apply'
+  inputs:
+    azureSubscription: 'azure-sp-conn'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      terraform apply -auto-approve -var-file="terraform.tfvars"
