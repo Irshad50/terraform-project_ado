@@ -1,5 +1,5 @@
 variable "rg_gola1" {}
 
-variable "vnets1" {}
+variable "vnets" {}
 
-variable "subnets1" {}
+variable "subnets" {}
