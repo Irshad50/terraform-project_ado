@@ -1,3 +1,3 @@
-output "vnets1" {
+output "vnets" {
   value = azurerm_virtual_network.vnet
 }
