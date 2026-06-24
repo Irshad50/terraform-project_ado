@@ -1,3 +1,3 @@
-variable "vnets1" {}
+variable "vnets" {}
 
 variable "resource_groups" {}
