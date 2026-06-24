@@ -1,5 +1,5 @@
-variable "subnets1" {}
+variable "subnets" {}
 
 variable "resource_groups" {}
 
-variable "vnets1" {}
+variable "vnets" {}
