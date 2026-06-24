@@ -16,7 +16,7 @@ rg_gola1 = {
   }
 }
 
-vnets1 = {
+vnets = {
 
   vnet4 = {
     name               = "goal_vnet4"
@@ -40,7 +40,7 @@ vnets1 = {
   }
 }
 
-subnets1 = {
+subnets = {
 
   subnet1 = {
     name                = "frontend-subnet3"
