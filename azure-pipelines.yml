@@ -23,15 +23,6 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: |
       terraform init -reconfigure
-      # Force Unlock
-- task: AzureCLI@2
-  displayName: 'Terraform Force Unlock'
-  inputs:
-    azureSubscription: 'azure-sp-conn'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      terraform force-unlock -force ffe4632f-75da-a73e-aa46-079017e0e55d
 
 # Terraform Validate
 - task: AzureCLI@2
