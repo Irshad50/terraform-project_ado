@@ -53,7 +53,7 @@ subnets = {
     name                = "frontend-subnet5"
     virtual_network_key = "vnet6"
     resource_group_key  = "rg6"
-    address_prefixes    = ["10.0.2.0/24"]
+    address_prefixes    = ["10.2.2.0/24"]
   }
 
   bastion_subnet = {
