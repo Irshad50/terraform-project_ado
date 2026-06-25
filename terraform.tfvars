@@ -29,14 +29,14 @@ vnets = {
     name               = "goal_vnet5"
     location           = "centralindia"
     resource_group_key = "rg5"
-    address_space      = ["192.168.1.0/24"]
+    address_space      = ["10.1.0.0/16"]
   }
 
   vnet6 = {
     name               = "goal_vnet6"
     location           = "eastus"
     resource_group_key = "rg6"
-    address_space      = ["10.1.0.0/16"]
+    address_space      = ["10.2.0.0/16"]
   }
 }
 
@@ -53,7 +53,7 @@ subnets = {
     name                = "frontend-subnet5"
     virtual_network_key = "vnet6"
     resource_group_key  = "rg6"
-    address_prefixes    = ["192.168.1.0/25"]
+    address_prefixes    = ["10.0.2.0/24"]
   }
 
   bastion_subnet = {
